@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="ir_filters_view_form" model="ir.ui.view">
-        <field name="name">mole-odoo-plugin.ir.filters.form</field>
+        <field name="name">filter_multi_user_with_exception.ir.filters.form</field>
         <field name="model">ir.filters</field>
         <field name="inherit_id" ref="filter_multi_user.ir_filters_view_form" />
         <field name="arch" type="xml">
@@ -12,7 +12,7 @@
     </record>
 
     <record id="ir_filters_view_tree" model="ir.ui.view">
-        <field name="name">mole-odoo-plugin.ir.filters.tree</field>
+        <field name="name">filter_multi_user_with_exception.ir.filters.tree</field>
         <field name="model">ir.filters</field>
         <field name="inherit_id" ref="filter_multi_user.ir_filters_view_tree" />
         <field name="arch" type="xml">
@@ -23,7 +23,7 @@
     </record>
 
     <record id="ir_filters_view_search" model="ir.ui.view">
-        <field name="name">mole-odoo-plugin.ir.filters.search</field>
+        <field name="name">filter_multi_user_with_exception.ir.filters.search</field>
         <field name="model">ir.filters</field>
         <field name="inherit_id" ref="filter_multi_user.ir_filters_view_search" />
         <field name="arch" type="xml">
