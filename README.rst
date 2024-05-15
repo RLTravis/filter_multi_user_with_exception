@@ -1,6 +1,6 @@
-=======================================
-Mail template with groups as recipients
-=======================================
+================================
+Filter Multi User With Exception
+================================
 
 .. |badge| image:: https://img.shields.io/badge/licence-LGPL--3-blue.png
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
