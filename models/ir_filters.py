@@ -20,3 +20,42 @@ class IrFilters(models.Model):
 
         for rec in self:
             rec.user_ids -= rec.except_group_ids.users
+
+    @api.model
+    def get_filters(self, model, action_id=None):
+        # WARNING: this function overrides the standard one.
+        # The only change done is in the domain used to search the filters.
+
+        action_domain = self._get_action_domain(action_id)
+        action_domain += [
+            (
+                'model_id',
+                '=',
+                model,
+            ),
+            '|',
+            (
+                'user_id',
+                '=?',
+                self._uid,
+            ),
+            (
+                'user_ids',
+                'in',
+                self._uid,
+            ),
+        ]
+
+        filters = self.search(action_domain)
+        user_context = self.env['res.users'].context_get()
+
+        return filters.with_context(**user_context).read(
+            [
+                'name',
+                'is_default',
+                'domain',
+                'context',
+                'user_id',
+                'sort',
+            ]
+        )
