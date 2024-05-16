@@ -14,7 +14,7 @@ class IrFilters(models.Model):
         column2='group_id'
     )
 
-    @api.constrains('except_group_ids')
+    @api.constrains('except_group_ids', 'except_group_ids.users')
     def _compute_user_ids(self):
         super()._compute_user_ids()
 
